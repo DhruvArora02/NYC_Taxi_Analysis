@@ -1,102 +1,57 @@
-# 🚖 NYC Taxi Data Analysis with Databricks & PySpark  
 
-This project analyzes NYC taxi trip data using **Databricks**, **PySpark**, and **Spark SQL** to showcase skills in big data processing, data engineering, and analytics. The notebook loads raw CSV data, cleans and transforms it, performs statistical analysis, and creates visualizations to uncover insights about taxi fares, trip distances, and popular pickup/dropoff locations.  
+# NYC Taxi Analysis - Databricks Pro Project
 
----
+## 📌 Project Overview
+This project demonstrates how to use **Databricks** and **PySpark** for big data analytics, SQL queries, Delta Lake storage, machine learning with MLlib, and visualizations — using **NYC Taxi data**.
 
-## 📂 Project Structure  
-├── NYC_Taxi_Analysis.ipynb         # Main Databricks / Jupyter Notebook
+## 🚀 Features
+- **ETL with PySpark**: Clean and transform raw taxi trip data.
+- **Delta Lake**: Store processed data in a fault-tolerant format.
+- **SQL Queries**: Run analytics queries directly in Databricks.
+- **Data Visualization**: Use Matplotlib & Seaborn for insights.
+- **MLlib Model**: Predict taxi fares using linear regression.
 
-├── data/nyc_taxi_data.csv          # Sample dataset
+## 📂 Dataset
+- `data/sample_nyc_taxi.csv` — Small dataset for quick testing.
+- Optional: Download full **NYC Yellow Taxi dataset**:
 
-├── README.md                       # Project documentation
-
----
-
-## 🚀 Features  
-- **Data Ingestion:** Load CSV data into Spark DataFrames.  
-- **Data Cleaning:** Convert timestamps, handle missing values, and format numeric fields.  
-- **Feature Engineering:** Extract trip hour, day-of-week, and trip duration.  
-- **Data Analysis:**  
-  - Aggregations with PySpark DataFrame API.  
-  - SQL-style analysis with Spark SQL.  
-- **Visualizations:**  
-  - Trip counts by hour of day.  
-  - Average fare by pickup location.  
-
----
-
-## 🛠️ Tech Stack  
-- **Databricks Community Edition**  
-- **Apache Spark / PySpark**  
-- **Spark SQL**  
-- **Pandas**  
-- **Matplotlib**  
-
----
-
-## 📊 Insights from the Analysis  
-- Peak taxi demand occurs in the evening hours.  
-- Central Park and JFK Airport have the highest average fares.  
-- Most trips are under 10 miles and have 1–3 passengers.  
-
----
-
-## 🖼️ Preview  
-> Example charts generated from the analysis:
-
-**Trip Counts by Hour**  
-![Trip Counts](charts/trip_counts_by_hour.png)  
-
-**Average Fare by Pickup Location**  
-![Average Fare](charts/avg_fare_by_location.png)  
-
----
-
-## 💡 Skills Demonstrated  
-- Big Data Analysis with Apache Spark  
-- Data Cleaning & Transformation  
-- SQL Querying in Spark  
-- Feature Engineering  
-- Data Visualization with Matplotlib  
-- Working in Databricks Environment  
-
----
-
-## 📥 How to Run  
-
-### 1️⃣ Clone the Repository  
-```bash
-git clone https://github.com/your-username/nyc-taxi-databricks.git
-cd nyc-taxi-databricks
+```python
+import urllib.request
+url = "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet"
+urllib.request.urlretrieve(url, "data/yellow_tripdata_2024-01.parquet")
 ```
 
-### 2️⃣ Open in Databricks
-- Sign up for Databricks Community Edition.
-
-- Create a new Notebook and set the default language to Python.
-
-- Upload the NYC_Taxi_Analysis.ipynb file.
-
-- Upload the CSV dataset to your Databricks workspace /FileStore/.
-
-- Update the file path in the notebook if needed.
-
-### 3️⃣ Run Locally (Optional)
-Install dependencies:
+## 🛠️ How to Run
+Clone this repository:
 ```
-pip install pyspark pandas matplotlib
+git clone https://github.com/yourusername/nyc-taxi-databricks-pro.git
+cd nyc-taxi-databricks-pro
 ```
-Open Jupyter Notebook:
 
-```
-jupyter notebook
-```
-Load and run NYC_Taxi_Analysis.ipynb.
+Upload to Databricks or run locally with PySpark.
 
-## 📌 Possible Improvements
-- Integrate with real NYC TLC trip data API.
+Open and run nyc_taxi_analysis_pro.ipynb step-by-step.
 
-- Use Delta Lake for optimized storage.
+## 📊 Example Output
+- Average Fare by Pickup Location bar chart.
 
-- Build an interactive dashboard with Plotly or Power BI.
+- Fare prediction with MLlib.
+
+## 📌 Technologies Used
+- Databricks
+- PySpark
+- Delta Lake
+- Spark SQL
+- Matplotlib / Seaborn
+- MLlib (Linear Regression)
+
+## 🧠 Key Learnings
+- Working with big data using PySpark DataFrames
+- Creating Delta Lake tables for versioned, reliable storage
+- Writing Spark SQL queries inside Databricks
+- Building a machine learning model with Spark MLlib
+
+## 📅 Future Improvements
+- Add streaming data ingestion (Kafka or Spark Structured Streaming)
+- Deploy ML model as an API endpoint
+- Automate pipeline with Databricks Jobs
